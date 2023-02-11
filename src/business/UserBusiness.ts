@@ -1,5 +1,4 @@
 import { UserDatabase } from "../data/UserDatabase"
-import { v4 as generateId } from 'uuid'
 import { UserInputDTO } from "../model/UserInputDTO"
 import { user, UserRole } from "../model/User"
 import { CustomError } from "../error/CustomError"
