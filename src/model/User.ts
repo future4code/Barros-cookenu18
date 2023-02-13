@@ -1,17 +1,22 @@
 export type user = {
-  id:string,
-  name:string,
-  email:string,
-  password:string,
-  role: string
+  id: string,
+  name: string,
+  email: string,
+  password: string,
+  role: UserRole
 }
 
-export enum UserRole{
-  ADMIN="ADMIN",
-  NORMAL="NORMAL"
+export enum UserRole {
+  ADMIN = "ADMIN",
+  NORMAL = "NORMAL"
 }
 
 export interface AuthenticationData {
   id: string;
-  role:string
+  role: string
+}
+
+export interface LoginInputDTO {
+  email: string;
+  password: string;
 }

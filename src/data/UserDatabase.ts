@@ -8,19 +8,32 @@ export class UserDatabase extends BaseDatabase {
   public createUser = async (user: user) => {
     try {
       UserDatabase.connection.initialize()
-      await UserDatabase.connection.insert({
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        password: user.password,
-        role: user.role
-      })
+
+      await UserDatabase.connection
+        .insert(user)
         .into(UserDatabase.TABLE_NAME);
+
     } catch (error: any) {
-      throw new CustomError(error.statusCode, error.message)
+      throw new CustomError(400, error.message)
     }finally{
       console.log("conexão encerrada!");
       UserDatabase.connection.destroy();
    }
   }
+
+  public findUser = async (email: string) => {
+    try {
+      UserDatabase.connection.initialize()
+      const result = await UserDatabase.connection(UserDatabase.TABLE_NAME)
+        .select()
+        .where({ email });
+
+      return result[0];
+    } catch (error: any) {
+      throw new CustomError(400, error.message);
+    }finally{
+      console.log("conexão encerrada!");
+      UserDatabase.connection.destroy();
+   }
+  };
 }
