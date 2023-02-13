@@ -18,9 +18,21 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3003/user/profile-info/:b69d47d6-9a6e-4b5c-ab06-4af8ce481b4a
+GET http://localhost:3003/user/profile-info/:
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2OWQ0N2Q2LTlhNmUtNGI1Yy1hYjA2LTRhZjhjZTQ4MWI0YSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjI5NzY3MywiZXhwIjoxNjc2MzAxMjczfQ.328i-2MFNCZ7dA9E8LKXQaLO_3jnkgt0rTf1rmqmZOE
 
+
+// recipes -----------------------------
+###
+POST http://localhost:3003/recipe/create
+Content-Type: application/json
+
+{
+    "title": "Cookie de chocolate",
+    "description": "Misture a manteiga, açúcar mascavo, açúcar, essência de baunilha | Adicione o ovo batido aos poucos e misture bem. | Acrescente a farinha aos poucos e misture bem | Por último, adicione o fermento e misture só para incorporá-lo à massa. | Depois da massa bem misturada, adicione o chocolate picado. | Forme bolinhas pequenas e asse em forno preaquecido, sobre papel manteiga, por aproximadamente 15 a 20 minutos (250° C).",
+    "creation_date": "2023-02-13",
+    "id_author": "691abef0-ae83-43e1-b158-7684766d4ff7"
+}
 
 
