@@ -20,3 +20,14 @@ export interface LoginInputDTO {
   email: string;
   password: string;
 }
+
+export interface InfoUser{
+  id: string,
+  token: string
+}
+
+export interface UserDTO{
+  id: string,
+  name:string,
+  email:string
+}
