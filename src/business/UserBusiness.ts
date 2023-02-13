@@ -1,6 +1,6 @@
 import { UserDatabase } from "../data/UserDatabase"
 import { UserInputDTO } from "../model/UserInputDTO"
-import { LoginInputDTO, user, UserRole } from "../model/User"
+import { LoginInputDTO, user, UserDTO, UserRole } from "../model/User"
 import { CustomError, InvalidBody, InvalidEmail, InvalidPassword, InvalidRole, UserExist, UserNotFound } from "../error/CustomError"
 import { HashManager } from "../services/HashManager"
 import { TokenGenerator } from "../services/TokenGenerator"
@@ -20,11 +20,11 @@ export class UserBusiness {
         throw new InvalidBody()
       }
 
-      if(!email.includes("@")){
+      if (!email.includes("@")) {
         throw new InvalidEmail()
       }
 
-      if(password.length <= 6){
+      if (password.length <= 6) {
         throw new InvalidPassword()
       }
 
@@ -45,7 +45,7 @@ export class UserBusiness {
         role
       }
 
-      if(email == user.email){
+      if (email == user.email) {
         throw new UserExist()
       }
 
@@ -65,19 +65,18 @@ export class UserBusiness {
     try {
       const { email, password } = input;
 
-      if (!email || !password) {throw new CustomError(400, 'Preencha os campos "email" e "password"');}
-      if (!email.includes("@")) {throw new InvalidEmail();}
+      if (!email || !password) { throw new CustomError(400, 'Preencha os campos "email" e "password"'); }
+      if (!email.includes("@")) { throw new InvalidEmail(); }
 
       const user = await userDatabase.findUser(email);
-      console.log(user)
-      
-      if (!user) {throw new UserNotFound();}
-    
-      const compareResult:boolean = await hashManager.compareHash(password, user.password)
 
-      if(!compareResult){throw new InvalidPassword()}
+      if (!user) { throw new UserNotFound(); }
 
-      const token = tokenGenerator.generateToken({id:user.id,role:user.role});
+      const compareResult: boolean = await hashManager.compareHash(password, user.password)
+
+      if (!compareResult) { throw new InvalidPassword() }
+
+      const token = tokenGenerator.generateToken({ id: user.id, role: user.role });
       return token;
 
     } catch (error: any) {
@@ -85,8 +84,15 @@ export class UserBusiness {
     }
   };
 
+  public profileInfo = async ()=> {
+    try {
+      
+
+    } catch (error: any) {
+      throw new CustomError(400, error.message);
+    }
+  };
 }
 
-/*
 
-*/
+

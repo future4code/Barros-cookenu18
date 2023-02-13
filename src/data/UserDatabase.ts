@@ -15,10 +15,10 @@ export class UserDatabase extends BaseDatabase {
 
     } catch (error: any) {
       throw new CustomError(400, error.message)
-    }finally{
+    } finally {
       console.log("conexão encerrada!");
       UserDatabase.connection.destroy();
-   }
+    }
   }
 
   public findUser = async (email: string) => {
@@ -31,9 +31,18 @@ export class UserDatabase extends BaseDatabase {
       return result[0];
     } catch (error: any) {
       throw new CustomError(400, error.message);
-    }finally{
+    } finally {
       console.log("conexão encerrada!");
       UserDatabase.connection.destroy();
-   }
-  };
+    }
+  }
+
+  public profileInfo = async () => {
+    try{
+     
+    }catch(error:any){
+      throw new CustomError(400, error.message);
+
+    }
+  }
 }

@@ -17,4 +17,10 @@ Content-Type: application/json
     "password": "hogwarts159"
 }
 
+###
+GET http://localhost:3003/user/profile-info/:b69d47d6-9a6e-4b5c-ab06-4af8ce481b4a
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2OWQ0N2Q2LTlhNmUtNGI1Yy1hYjA2LTRhZjhjZTQ4MWI0YSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjI5NzY3MywiZXhwIjoxNjc2MzAxMjczfQ.328i-2MFNCZ7dA9E8LKXQaLO_3jnkgt0rTf1rmqmZOE
+
+
 

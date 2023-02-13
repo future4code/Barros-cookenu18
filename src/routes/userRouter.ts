@@ -7,3 +7,4 @@ const userController = new UserController()
 
 userRouter.post("/create", userController.createUser)
 userRouter.post("/login", userController.login)
+userRouter.get("/profile-info", userController.profileInfo)
