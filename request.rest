@@ -38,10 +38,14 @@ POST http://localhost:3003/recipe/create
 Content-Type: application/json
 
 {
-    "title": "Cookie de chocolate",
-    "description": "Misture a manteiga, açúcar mascavo, açúcar, essência de baunilha | Adicione o ovo batido aos poucos e misture bem. | Acrescente a farinha aos poucos e misture bem | Por último, adicione o fermento e misture só para incorporá-lo à massa. | Depois da massa bem misturada, adicione o chocolate picado. | Forme bolinhas pequenas e asse em forno preaquecido, sobre papel manteiga, por aproximadamente 15 a 20 minutos (250° C).",
-    "creation_date": "2023-02-13",
-    "id_author": "691abef0-ae83-43e1-b158-7684766d4ff7"
+    "title": "Chá de camomila",
+    "description": "Comece fervendo 250 ml de água; Pegue duas colheres de chá de camomila (a flor seca) e coloque na água; Aguarde aproximadamente 10 minutos com a xícara tampada; Antes de beber, coe. E pronto!",
+    "creation_date": "2023-02-14",
+    "id_author": "432906d1-3049-43ce-9ac0-1bdd67c472d9"
 }
+
+###
+GET http://localhost:3003/recipe/feed/24d4ecc2-cfff-46a9-bd73-9122a18d2adf
+Content-Type: application/json
 
 
