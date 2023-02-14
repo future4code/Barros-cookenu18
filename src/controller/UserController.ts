@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UserBusiness } from "../business/UserBusiness";
-import { InfoUser, LoginInputDTO } from "../model/User";
+import { followDTO, InfoUser, LoginInputDTO } from "../model/User";
 import { UserInputDTO } from "../model/UserInputDTO";
 import { TokenGenerator } from "../services/TokenGenerator";
 
@@ -54,6 +54,20 @@ export class UserController {
 
     } 
 
+  }
+
+  public followUser = async(req: Request, res: Response)=>{
+    try{
+      const input: followDTO={
+        id_user: req.body.id_user,
+        id_follow_user: req.body.id_follow_user
+      }
+      await userBusiness.followUser(input)
+      res.status(201).send({ message: "Seguindo!" })
+
+    }catch(error:any){
+      res.status(400).send(error.message);
+    }
   }
 
 }

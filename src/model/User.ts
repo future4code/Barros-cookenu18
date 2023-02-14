@@ -31,3 +31,14 @@ export interface UserDTO{
   name:string,
   email:string
 }
+
+export interface followDTO{
+  id_user: string,
+  id_follow_user:string
+}
+
+export interface follow{
+  id:string
+  id_user: string,
+  id_follow_user:string
+}

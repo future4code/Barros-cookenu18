@@ -1,6 +1,6 @@
 import { UserDatabase } from "../data/UserDatabase"
 import { UserInputDTO } from "../model/UserInputDTO"
-import { LoginInputDTO, user, UserDTO, UserRole } from "../model/User"
+import { follow, followDTO, LoginInputDTO, user, UserDTO, UserRole } from "../model/User"
 import { CustomError, InvalidBody, InvalidEmail, InvalidPassword, InvalidRole, UserExist, UserNotFound } from "../error/CustomError"
 import { HashManager } from "../services/HashManager"
 import { TokenGenerator } from "../services/TokenGenerator"
@@ -9,6 +9,7 @@ import { IdGenerator } from "../services/generateId"
 const hashManager = new HashManager()
 const tokenGenerator = new TokenGenerator()
 const userDatabase = new UserDatabase()
+const idGenerator = new IdGenerator()
 
 export class UserBusiness {
 
@@ -28,7 +29,6 @@ export class UserBusiness {
         throw new InvalidPassword()
       }
 
-      const idGenerator = new IdGenerator()
       const id: string = idGenerator.generateId()
       const hashManager = new HashManager()
       const hashPassword: string = await hashManager.generateHash(password)
@@ -84,14 +84,38 @@ export class UserBusiness {
     }
   };
 
-  public profileInfo = async ()=> {
+  public profileInfo = async () => {
     try {
-      
+
 
     } catch (error: any) {
       throw new CustomError(400, error.message);
     }
   };
+
+  public followUser = async (input: followDTO) => {
+    try {
+      const { id_user, id_follow_user } = input
+
+      if (!id_user || !id_follow_user) {
+        throw new InvalidBody()
+      }
+
+      const id: string = idGenerator.generateId()
+
+      const follow: follow = {
+        id:id,
+        id_user,
+        id_follow_user
+      }
+
+      await userDatabase.followUser(follow)
+
+    } catch (error: any) {
+      throw new CustomError(400, error.message);
+
+    }
+  }
 }
 
 

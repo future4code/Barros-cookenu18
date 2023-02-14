@@ -1,5 +1,5 @@
 import { CustomError } from "../error/CustomError";
-import { user } from "../model/User";
+import { follow, user } from "../model/User";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class UserDatabase extends BaseDatabase {
@@ -44,5 +44,17 @@ export class UserDatabase extends BaseDatabase {
       throw new CustomError(400, error.message);
 
     }
+  }
+
+  public followUser = async (input:follow)=>{
+    try{
+      await UserDatabase.connection()
+      .insert(input)
+      .into("follow_cookenu")
+
+    }catch(error:any){
+      throw new CustomError(400, error.message);
+    }
+
   }
 }
