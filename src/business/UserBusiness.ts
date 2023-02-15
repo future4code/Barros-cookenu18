@@ -8,8 +8,8 @@ import { IdGenerator } from "../services/generateId"
 
 const hashManager = new HashManager()
 const tokenGenerator = new TokenGenerator()
-const userDatabase = new UserDatabase()
 const idGenerator = new IdGenerator()
+const userDatabase = new UserDatabase()
 
 export class UserBusiness {
 
@@ -44,12 +44,10 @@ export class UserBusiness {
         password: hashPassword,
         role
       }
-
-      if (email == user.email) {
-        throw new UserExist()
-      }
-
-      const userDatabase = new UserDatabase()
+      /*
+            const userExists = await userDatabase.findUser(email) // NÃO FUNCIONA
+            if (userExists) { throw new UserExist() }
+      */
       await userDatabase.createUser(user)
 
       const tokenGenerator = new TokenGenerator()
@@ -84,10 +82,12 @@ export class UserBusiness {
     }
   };
 
-  public profileInfo = async () => {
+  public profileInfo = async (token: string) => {
     try {
-
-
+      const idUser = tokenGenerator.tokenData(token) 
+      const dadosUser = await userDatabase.profileInfo(idUser.id)
+      return dadosUser
+      
     } catch (error: any) {
       throw new CustomError(400, error.message);
     }
@@ -104,7 +104,7 @@ export class UserBusiness {
       const id: string = idGenerator.generateId()
 
       const follow: follow = {
-        id:id,
+        id: id,
         id_user,
         id_follow_user
       }
