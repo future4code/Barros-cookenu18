@@ -1,22 +1,33 @@
 import { Request, Response } from "express";
 import { RecipeBusiness } from "../business/RecipeBusiness";
 import { RecipeInputDTO } from "../model/RecipeInputDTO";
+import { TokenGenerator } from "../services/TokenGenerator";
 
 const recipeBusiness = new RecipeBusiness();
+const tokenGenerator = new TokenGenerator()
 
 export class RecipeController {
 
   public createRecipe = async (req: Request, res: Response) => {
     try {
-      const { title, description, creation_date, id_author } = req.body
-
-      const input: RecipeInputDTO = {
-        title,
-        description,
-        creation_date,
-        id_author
+      const dados= { 
+        title: req.body.title, 
+        description: req.body.description, 
+        creation_date: req.body.creation_date, 
+        id_author: req.body.id_author,
+        token: req.headers.authorization as string
       }
 
+      console.log(dados.token)
+
+      const input: RecipeInputDTO = {
+        title: dados.title,
+        description: dados.description,
+        creation_date: dados.creation_date,
+        id_author: dados.id_author,
+        token: dados.token
+      }
+      
       await recipeBusiness.createRecipe(input);
 
       res.status(201).send({ message: "Receira cadastrada com sucesso" });

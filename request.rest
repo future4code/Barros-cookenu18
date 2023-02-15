@@ -2,10 +2,10 @@ POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "name": "Severus Snape",
-    "email": "snape@hogwarts.com",
-    "password": "hogwarts159",
-    "role": "admin"
+    "name": "Hermione",
+    "email": "hermione@hogwarts.com",
+    "password": "hermione123",
+    "role": "normal"
 }
 
 ###
@@ -36,12 +36,13 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2OWQ0N2Q2LTlhNmUt
 ###
 POST http://localhost:3003/recipe/create
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2OWQ0N2Q2LTlhNmUtNGI1Yy1hYjA2LTRhZjhjZTQ4MWI0YSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjQyMzA4MiwiZXhwIjoxNjc2NDI2NjgyfQ.3s9tp_tSUwZexRg-NPQESqbQ3vlSFGYYxEqN47Dv1rQ
 
 {
-    "title": "Chá de camomila",
-    "description": "Comece fervendo 250 ml de água; Pegue duas colheres de chá de camomila (a flor seca) e coloque na água; Aguarde aproximadamente 10 minutos com a xícara tampada; Antes de beber, coe. E pronto!",
+    "title": "Ovo frito",
+    "description": "Coloque um fio de azeite na frigideira. Deixe aquecer. Quebre o ovo na figideira. Salpique uma pitada de sal por todo o ovo. Mantenha em fogo baixo até a clara estar rendada e a gema, mole",
     "creation_date": "2023-02-14",
-    "id_author": "432906d1-3049-43ce-9ac0-1bdd67c472d9"
+    "id_author": "b69d47d6-9a6e-4b5c-ab06-4af8ce481b4a"
 }
 
 ###
