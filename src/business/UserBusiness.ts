@@ -48,6 +48,7 @@ export class UserBusiness {
             const userExists = await userDatabase.findUser(email) // NÃO FUNCIONA
             if (userExists) { throw new UserExist() }
       */
+     
       await userDatabase.createUser(user)
 
       const tokenGenerator = new TokenGenerator()

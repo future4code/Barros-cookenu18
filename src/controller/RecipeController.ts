@@ -39,9 +39,9 @@ export class RecipeController {
 
   public seeFeed = async (req: Request, res: Response) => {
     try {
-      const {id_user }= req.params 
+      const token = req.headers.authorization 
 
-      const feed = await recipeBusiness.seeFeed(id_user)
+      const feed = await recipeBusiness.seeFeed(token)
       
       res.status(201).send({ feed });
 

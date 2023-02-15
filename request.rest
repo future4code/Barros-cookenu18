@@ -14,7 +14,7 @@ Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhNWM2MDFiLWJjOWEtNDBhYy1iMzljLTFlYTA3ZWZiYjY1MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjQ3MTEzNCwiZXhwIjoxNjc2NDc0NzM0fQ.r1M5vCX6mKFvPHfNYNslQ4wbkRaYt8xZR8KHgtuhDZo
 
 {
-    "id_follow_user": "ae1058b3-9bca-4c9e-a21d-ac2aef6600d5"
+    "id_follow_user": "691abef0-ae83-43e1-b158-7684766d4ff7"
 }
 
 ###
@@ -46,7 +46,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2OWQ0N2Q2LTlhNmUt
 }
 
 ###
-GET http://localhost:3003/recipe/feed/24d4ecc2-cfff-46a9-bd73-9122a18d2adf
+GET http://localhost:3003/recipe/feed
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhNWM2MDFiLWJjOWEtNDBhYy1iMzljLTFlYTA3ZWZiYjY1MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjQ3MDI2NSwiZXhwIjoxNjc2NDczODY1fQ.1XcZ2NRKPsmWAn0_KE1XjJEDidvMLJhNj4ldfRTuNSM
 
 

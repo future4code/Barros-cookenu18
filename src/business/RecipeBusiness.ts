@@ -37,13 +37,13 @@ export class RecipeBusiness {
     }
   }
 
-  public seeFeed = async (id_user:string) => {
+  public seeFeed = async (token:string) => {
     try{
-      if (!id_user){
+      if (!token){
         throw new InvalidBody()
       }
-
-      return await recipeDatabase.seeFeed(id_user)
+      const idUser = tokenGenerator.tokenData(token)
+      return await recipeDatabase.seeFeed(idUser.id)
       
     }catch(error:any){
       throw new CustomError(400, error.message)
