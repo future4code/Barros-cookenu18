@@ -84,10 +84,9 @@ export class UserBusiness {
 
   public profileInfo = async (token: string) => {
     try {
-      const idUser = tokenGenerator.tokenData(token) 
+      const idUser = tokenGenerator.tokenData(token)
       const dadosUser = await userDatabase.profileInfo(idUser.id)
       return dadosUser
-      
     } catch (error: any) {
       throw new CustomError(400, error.message);
     }
@@ -97,15 +96,16 @@ export class UserBusiness {
     try {
       const { id_user, id_follow_user } = input
 
-      if (!id_user || !id_follow_user) {
+      if (!id_follow_user) {
         throw new InvalidBody()
       }
 
+      const idUser = tokenGenerator.tokenData(id_user)
       const id: string = idGenerator.generateId()
 
       const follow: follow = {
         id: id,
-        id_user,
+        id_user: idUser.id,
         id_follow_user
       }
 

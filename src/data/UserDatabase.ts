@@ -60,6 +60,5 @@ export class UserDatabase extends BaseDatabase {
     }catch(error:any){
       throw new CustomError(400, error.message);
     }
-
   }
 }
