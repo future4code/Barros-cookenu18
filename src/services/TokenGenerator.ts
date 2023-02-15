@@ -1,5 +1,5 @@
 import * as jwt from "jsonwebtoken";
-import { AuthenticationData } from "../model/user";
+import { AuthenticationData } from "../model/User";
 
 export class TokenGenerator {
   public generateToken = ({ id, role }: AuthenticationData) => {
