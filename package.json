@@ -1,8 +1,15 @@
 {
+    "name":"barros-cookenu18",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
     "scripts": {
         "start": "tsc && node --inspect ./build/index.js",
         "dev": "tsnd --transpile-only --ignore-watch node_modules ./src/index.ts"
     },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
     "dependencies": {
         "@types/bcryptjs": "^2.4.2",
         "@types/jsonwebtoken": "^9.0.1",
