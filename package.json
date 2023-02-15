@@ -1,7 +1,11 @@
 {
+    "name": "barros-cookenu18",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
     "scripts": {
-        "start": "tsc && node ./build/index.js",
-        "dev": "ts-node-dev ./src/index.ts"
+        "dev": "ts-node-dev ./src/index.ts",
+        "start": "tsc && node ./build/index.js"
     },
     "dependencies": {
         "@types/bcryptjs": "^2.4.2",
