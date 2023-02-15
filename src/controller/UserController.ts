@@ -64,7 +64,7 @@ export class UserController {
   public followUser = async(req: Request, res: Response)=>{
     try{
       const input: followDTO={
-        id_user: req.body.id_user,
+        id_user: req.headers.authorization,
         id_follow_user: req.body.id_follow_user
       }
       await userBusiness.followUser(input)
