@@ -34,6 +34,12 @@ export class InvalidBody extends CustomError{
     }
 }
 
+export class invalidFollow extends CustomError{
+    constructor(){
+        super(400, "Usuário não encontrado")
+    }
+}
+
 export class UserExist extends CustomError{
     constructor(){
         super(400, "Usuário já existe")

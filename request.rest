@@ -2,9 +2,9 @@ POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "name": "Chapéu Seletor",
-    "email": "chapeu@hogwarts.com",
-    "password": "seletor12245",
+    "name": "Rúbeo Hagrid",
+    "email": "hagrid@hogwarts.com",
+    "password": "hogwartsforever",
     "role": "admin"
 }
 
@@ -27,10 +27,9 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3003/user/profile-info/ca5c601b-bc9a-40ac-b39c-1ea07efbb652
+GET http://localhost:3003/user/profile-info
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhNWM2MDFiLWJjOWEtNDBhYy1iMzljLTFlYTA3ZWZiYjY1MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjQ3MDI2NSwiZXhwIjoxNjc2NDczODY1fQ.1XcZ2NRKPsmWAn0_KE1XjJEDidvMLJhNj4ldfRTuNSM
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhNWM2MDFiLWJjOWEtNDBhYy1iMzljLTFlYTA3ZWZiYjY1MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjQ3NDM5NSwiZXhwIjoxNjc2NDc3OTk1fQ.acK-JsA6kWUFvYcJhf-sFseUe5Dr3oy2o_p99vnYXSI
 
 // recipes -----------------------------
 ###
