@@ -37,8 +37,13 @@ export class UserDatabase extends BaseDatabase {
     }
   }
 
-  public profileInfo = async () => {
+  public profileInfo = async (idUser:string) => {
     try{
+      const result = await UserDatabase.connection(UserDatabase.TABLE_NAME)
+        .select("*")
+        .where({ id: idUser });
+
+      return result[0];
      
     }catch(error:any){
       throw new CustomError(400, error.message);

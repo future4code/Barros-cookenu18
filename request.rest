@@ -2,10 +2,10 @@ POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "name": "Hermione",
-    "email": "hermione@hogwarts.com",
-    "password": "hermione123",
-    "role": "normal"
+    "name": "Chapéu Seletor",
+    "email": "chapeu@hogwarts.com",
+    "password": "seletor12245",
+    "role": "admin"
 }
 
 ###
@@ -22,14 +22,14 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-    "email": "snape@hogwarts.com",
-    "password": "hogwarts159"
+    "email": "chapeu@hogwarts.com",
+    "password": "seletor12245"
 }
 
 ###
-GET http://localhost:3003/user/profile-info/:
+GET http://localhost:3003/user/profile-info/ca5c601b-bc9a-40ac-b39c-1ea07efbb652
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2OWQ0N2Q2LTlhNmUtNGI1Yy1hYjA2LTRhZjhjZTQ4MWI0YSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjI5NzY3MywiZXhwIjoxNjc2MzAxMjczfQ.328i-2MFNCZ7dA9E8LKXQaLO_3jnkgt0rTf1rmqmZOE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhNWM2MDFiLWJjOWEtNDBhYy1iMzljLTFlYTA3ZWZiYjY1MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjQ3MDI2NSwiZXhwIjoxNjc2NDczODY1fQ.1XcZ2NRKPsmWAn0_KE1XjJEDidvMLJhNj4ldfRTuNSM
 
 
 // recipes -----------------------------

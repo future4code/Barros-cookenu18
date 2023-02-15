@@ -48,6 +48,11 @@ export class UserController {
 
   public profileInfo = async (req: Request, res: Response) => {
     try{
+      const token = req.headers.authorization as string
+
+      const dadosUser = await userBusiness.profileInfo(token)
+      res.status(201).send({ message: "Dados do usuário", dadosUser });
+
 
     } catch(error:any){
       res.status(400).send(error.message);
