@@ -1,7 +1,7 @@
 import { UserDatabase } from "../data/UserDatabase"
 import { UserInputDTO } from "../model/UserInputDTO"
 import { follow, followDTO, LoginInputDTO, user, UserDTO, UserRole } from "../model/User"
-import { CustomError, InvalidBody, InvalidEmail, InvalidPassword, InvalidRole, UserExist, UserNotFound } from "../error/CustomError"
+import { CustomError, InvalidBody, InvalidEmail, invalidFollow, InvalidPassword, InvalidRole, UserExist, UserNotFound } from "../error/CustomError"
 import { HashManager } from "../services/HashManager"
 import { TokenGenerator } from "../services/TokenGenerator"
 import { IdGenerator } from "../services/generateId"
@@ -44,11 +44,10 @@ export class UserBusiness {
         password: hashPassword,
         role
       }
-      /*
-            const userExists = await userDatabase.findUser(email) // NÃO FUNCIONA
-            if (userExists) { throw new UserExist() }
-      */
-     
+      const userExists = await userDatabase.findUser(email)
+      if (userExists) { throw new UserExist() }
+
+
       await userDatabase.createUser(user)
 
       const tokenGenerator = new TokenGenerator()
@@ -86,6 +85,8 @@ export class UserBusiness {
   public profileInfo = async (token: string) => {
     try {
       const idUser = tokenGenerator.tokenData(token)
+      if (!idUser) { throw new InvalidBody() }
+
       const dadosUser = await userDatabase.profileInfo(idUser.id)
       return dadosUser
     } catch (error: any) {
@@ -98,7 +99,7 @@ export class UserBusiness {
       const { id_user, id_follow_user } = input
 
       if (!id_follow_user) {
-        throw new InvalidBody()
+        throw new invalidFollow()
       }
 
       const idUser = tokenGenerator.tokenData(id_user)
