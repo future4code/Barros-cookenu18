@@ -35,7 +35,7 @@ DB_NAME = ""
 ```
 Após configuração do .env, rode o arquivo queries.sql para a criação das tabelas no banco de dados SQL
 
-Após o migrations, dê o comando seguinte para rodar a aplicação:
+Após criar as tabelas, dê o comando seguinte para rodar a aplicação:
 ```
 npm run start
 ```
