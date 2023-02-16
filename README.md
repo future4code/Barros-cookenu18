@@ -8,6 +8,9 @@ Projeto individual desenvolvido no back-end da Labenu. Com o objetivo de criar a
 ## Link Deploy Render
 https://barros-cookenu18.onrender.com
 
+## Link da documentação
+https://documenter.getpostman.com/view/22349689/2s93CExwfu
+
 ## :wrench: Tecnologias utilizadas
 * VS Code
 * nodeJS
@@ -30,10 +33,8 @@ DB_USER = ""
 DB_PASS = ""
 DB_NAME = ""
 ```
-Após configuração do .env, dê o comando seguinte para rodar o migration:
-```
-npm run migrations
-```
+Após configuração do .env, rode o arquivo queries.sql para a criação das tabelas no banco de dados SQL
+
 Após o migrations, dê o comando seguinte para rodar a aplicação:
 ```
 npm run start
