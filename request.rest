@@ -1,0 +1,52 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "Rúbeo Hagrid",
+    "email": "hagrid@hogwarts.com",
+    "password": "hogwartsforever",
+    "role": "admin"
+}
+
+###
+POST http://localhost:3003/user/follow-user
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhNWM2MDFiLWJjOWEtNDBhYy1iMzljLTFlYTA3ZWZiYjY1MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjQ3MTEzNCwiZXhwIjoxNjc2NDc0NzM0fQ.r1M5vCX6mKFvPHfNYNslQ4wbkRaYt8xZR8KHgtuhDZo
+
+{
+    "id_follow_user": "691abef0-ae83-43e1-b158-7684766d4ff7"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "chapeu@hogwarts.com",
+    "password": "seletor12245"
+}
+
+###
+GET http://localhost:3003/user/profile-info
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhNWM2MDFiLWJjOWEtNDBhYy1iMzljLTFlYTA3ZWZiYjY1MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjQ3NDM5NSwiZXhwIjoxNjc2NDc3OTk1fQ.acK-JsA6kWUFvYcJhf-sFseUe5Dr3oy2o_p99vnYXSI
+
+// recipes -----------------------------
+###
+POST http://localhost:3003/recipe/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI2OWQ0N2Q2LTlhNmUtNGI1Yy1hYjA2LTRhZjhjZTQ4MWI0YSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjQyMzA4MiwiZXhwIjoxNjc2NDI2NjgyfQ.3s9tp_tSUwZexRg-NPQESqbQ3vlSFGYYxEqN47Dv1rQ
+
+{
+    "title": "Ovo frito",
+    "description": "Coloque um fio de azeite na frigideira. Deixe aquecer. Quebre o ovo na figideira. Salpique uma pitada de sal por todo o ovo. Mantenha em fogo baixo até a clara estar rendada e a gema, mole",
+    "creation_date": "2023-02-14",
+    "id_author": "b69d47d6-9a6e-4b5c-ab06-4af8ce481b4a"
+}
+
+###
+GET http://localhost:3003/recipe/feed
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhNWM2MDFiLWJjOWEtNDBhYy1iMzljLTFlYTA3ZWZiYjY1MiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3NjQ3MDI2NSwiZXhwIjoxNjc2NDczODY1fQ.1XcZ2NRKPsmWAn0_KE1XjJEDidvMLJhNj4ldfRTuNSM
+
+
